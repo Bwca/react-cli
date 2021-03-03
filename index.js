@@ -35,7 +35,7 @@ writeFileSync(
 import { ${componentName}Props } from "./${componentName}.model";
 import s from "./${componentName}.module.scss";
 
-export const ${componentName}: FC<${componentName}Props> = () => <>${componentName} works!</>;`
+export const ${componentName}: FC<${componentName}Props> = () => <>${componentName} works!</>;\n`
 );
 
 writeFileSync(
