@@ -5,14 +5,11 @@ const command = process.argv[2];
 const unit = process.argv[3];
 const component = process.argv[4];
 
-if (command !== "g" || unit !== "c" || !component) {
-    throw "You might want to read the manual, your command made no sense.";
-}
-
-
 console.log(process.argv);
 
-process.exit(1)
+if (/* command !== "g" || unit !== "c" || !component */ true) {
+    throw "You might want to read the manual, your command made no sense.";
+}
 
 /* 
 const folderPath =
