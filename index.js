@@ -30,8 +30,7 @@ mkdirSync(join(currentWorkingDirectory, `${componentFolder}`), {
 
 writeFileSync(
     join(currentWorkingDirectory, `${componentFolder}/${componentName}.tsx`),
-    `import { FC } from "react";
-    
+    `import { FC } from "react";\n
 import { ${componentName}Props } from "./${componentName}.model";
 import s from "./${componentName}.module.scss";
 
@@ -40,12 +39,12 @@ export const ${componentName}: FC<${componentName}Props> = () => <>${componentNa
 
 writeFileSync(
     join(currentWorkingDirectory, `${componentFolder}/index.ts`),
-    `export { ${componentName} } from "./${componentName}";`
+    `export { ${componentName} } from "./${componentName}";\n`
 );
 
 writeFileSync(
     join(currentWorkingDirectory, `${componentFolder}/${componentName}.model.ts`),
-    `export interface ${componentName}Props {}`
+    `export interface ${componentName}Props {}\n`
 );
 
 writeFileSync(
