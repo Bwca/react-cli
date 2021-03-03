@@ -12,6 +12,7 @@ const component = process.argv[4];
 } */
 
 console.log(process.argv);
+console.log(__dirname);
 
 /* 
 const folderPath =
