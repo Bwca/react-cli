@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const fs = require("fs");
 const path = require("path");
 
@@ -11,11 +9,12 @@ if (command !== "g" || unit !== "c" || !component) {
     throw "You might want to read the manual, your command made no sense.";
 }
 
+/* 
 const folderPath =
     `src/${component}`
         .split("/")
         .filter((undefined, i, { length }) => i !== length - 1)
-        .join("/") || "src";
+        .join("/") || "src"; */
 
 const componentName = component
     .split("/")
@@ -27,9 +26,33 @@ const componentName = component
     )
     .join();
 
-const componentFolder = `${folderPath}/${componentName}`;
-
-console.log(`component name: ${componentName}`);
-console.log(`folder name: ${folderPath}`);
+const componentFolder = `src/${component}`;
 
 fs.mkdirSync(path.join(__dirname, `${componentFolder}`), { recursive: true });
+
+fs.writeFileSync(
+    path.join(__dirname, `${componentFolder}/${componentName}.tsx`),
+    `import { FC } from "react";
+    
+import { ${componentName}Props } from "./${componentName}.model";
+import s from "./${componentName}.module.scss";
+
+export const ${componentName}: FC<${componentName}Props> = () => (
+    <>${componentName} works!</>
+);`
+);
+
+fs.writeFileSync(
+    path.join(__dirname, `${componentFolder}/index.ts`),
+    `export { ${componentName} } from "./${componentName}";`
+);
+
+fs.writeFileSync(
+    path.join(__dirname, `${componentFolder}/${componentName}.model.ts`),
+    `export interface ${componentName}Props {}`
+);
+
+fs.writeFileSync(
+    path.join(__dirname, `${componentFolder}/${componentName}.module.scss`),
+    ""
+);
