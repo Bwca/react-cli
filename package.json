@@ -4,10 +4,10 @@
     "description": "",
     "main": "index.js",
     "bin": {
-        "awesome-command": "index.js"
+        "react-cli": "index.js"
     },
     "scripts": {
-        "awesome": "awesome-command"
+        "react-cli": "react-cli"
     },
     "keywords": [],
     "author": "",
