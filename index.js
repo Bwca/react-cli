@@ -13,6 +13,8 @@ const component = process.argv[4];
 
 console.log(process.argv);
 console.log(__dirname);
+console.log(process.cwd());
+console.log(process.chdir());
 
 /* 
 const folderPath =
