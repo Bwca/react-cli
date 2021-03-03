@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require("fs");
 const path = require("path");
 
@@ -8,7 +10,6 @@ const component = process.argv[4];
 /* if (command !== "g" || unit !== "c" || !component) {
     throw "You might want to read the manual, your command made no sense.";
 } */
-
 
 console.log(process.argv);
 
