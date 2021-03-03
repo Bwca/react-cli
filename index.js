@@ -9,6 +9,11 @@ if (command !== "g" || unit !== "c" || !component) {
     throw "You might want to read the manual, your command made no sense.";
 }
 
+
+console.log(process.argv);
+
+process.exit(1)
+
 /* 
 const folderPath =
     `src/${component}`
