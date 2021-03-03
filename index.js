@@ -5,11 +5,12 @@ const command = process.argv[2];
 const unit = process.argv[3];
 const component = process.argv[4];
 
-console.log(process.argv);
-
-if (/* command !== "g" || unit !== "c" || !component */ true) {
+/* if (command !== "g" || unit !== "c" || !component) {
     throw "You might want to read the manual, your command made no sense.";
-}
+} */
+
+
+console.log(process.argv);
 
 /* 
 const folderPath =
@@ -18,7 +19,7 @@ const folderPath =
         .filter((undefined, i, { length }) => i !== length - 1)
         .join("/") || "src"; */
 
-const componentName = component
+/* const componentName = component
     .split("/")
     .filter((undefined, i, { length }) => i === length - 1)
     .map((i) =>
@@ -58,3 +59,4 @@ fs.writeFileSync(
     path.join(__dirname, `${componentFolder}/${componentName}.module.scss`),
     ""
 );
+ */
